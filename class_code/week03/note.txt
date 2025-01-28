@@ -1,0 +1,12 @@
+npm init -y
+npm i express nodemon dotenv
+
+created a file .env
+nodemon index.js
+
+Ctrl + space in the package.json file and add (type : "module")
+
+
+dOWNLOAD THUNDER CLIENT
+NEW REQUEST
+

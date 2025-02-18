@@ -1,0 +1,105 @@
+/* General styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #9af0ff, #fad0c4);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Main container */
+div {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for the main container */
+div:hover {
+  transform: scale(1.02);
+}
+
+/* Headings */
+h2 {
+  color: #b007ee;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Inputs */
+input[type="file"] {
+  display: none;
+}
+
+label[for="file-upload"] {
+  background: #fc9898;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  transition: background 0.3s ease-in-out;
+}
+
+label[for="file-upload"]:hover {
+  background: #ff4757;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #2575fc;
+  transform: translateY(-2px);
+}
+
+/* Image styling */
+img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Display Images Container */
+div img {
+  margin: 10px;
+}
+
+/* Message Styling */
+p {
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 10px;
+}

@@ -64,20 +64,26 @@ const App = () => {
   // fetch functions -> fetch multiple [TODO]
   const fetchMultipleFiles = async() => {
     try {
+      //1. fetches a list of image filenames from the server
       const response = await fetch(`http://localhost:8000/fetch/multiple`);
       const data = await response.json();
       console.log(data);
       //fetch - /fetch/file/filename variable
+      //2. loops through each filename and fetches the corresponding file
       const filePromises = data.map(async(filename)=>{
         const fileResponse = await fetch(`http://localhost:8000/fetch/file/${filename}`);
 
+      //3. converts each file into a blob and generates a temp URL
         const fileBlob = await fileResponse.blob();
         console.log(fileBlob);
         const imageUrl = URL.createObjectURL(fileBlob);
         return imageUrl;
     });
 
+    //4. Waits for all images to be fetched
     const imageUrls = await Promise.all(filePromises);
+
+    //5. updates the state to display the images
     setDisplayImages(imageUrls)
 
     }catch (error) {
@@ -101,21 +107,28 @@ const App = () => {
   // fetch functions -> save dog image [TODO]
   const saveDogImage = async () => {
     try {
+      //displayDogImages hold a URL of a random dog image fetched earlier
+      //1. fetch the image from the displayogImages URL
       const fileResponse = await fetch(displayDogImages);
+      //2. Convert the fetched image into a blob
       const blob = await fileResponse.blob();
 
       //convert blob to File before appending
+      //3. create a file object from the blob
       const file = new File([blob], "dog-image.jpg", {type:"image/jpeg"});
       
+      //4. attach the file to a FormData object
       const formData = new FormData();
       formData.append("file", file);
       // formData.append("file", blob, "dog-image.jpg");
 
+      //5. SEND a post request to save the image on the backend
       const response = await fetch(`http://localhost:8000/save/single`, {
         method: "POST",
         body: formData
     });
 
+    //6. log the server response or catch any errors
     const data = await response.json();
     console.log(data);
 

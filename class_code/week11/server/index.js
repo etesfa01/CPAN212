@@ -12,7 +12,7 @@ import userRouter from "./routes/user_router.js";
 
 // Initialize app
 const app = express();
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 8000;
 
 // Middleware
 app.use(cors());

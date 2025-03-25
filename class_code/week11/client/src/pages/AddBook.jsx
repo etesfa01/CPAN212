@@ -29,6 +29,7 @@ const AddBook = () => {
       }
 
       // Make the POST request with the token in the Authorization header
+      // process.env = server_url (extra bonus mark)
       const response = await fetch(`${import.meta.env.VITE_SERVER_URL}api/books/add`, {
         method: "POST",
         headers: {
